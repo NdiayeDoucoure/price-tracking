@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MarcheRepository;
+
+#[ORM\Entity(repositoryClass: MarcheRepository::class)]
+#[ORM\Table(name: "marche")]
+class Marche
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
+    private ?int $id = null;
+
+    #[ORM\Column(type: "string", length: 50)]
+    private string $nom;
+
+    #[ORM\Column(type: "string", length: 100)]
+    private string $localisation;
+
+    #[ORM\Column(type: "string", length: 6)]
+    private string $type;
+
+    // Getters et setters
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    public function getLocalisation(): string
+    {
+        return $this->localisation;
+    }
+
+    public function setLocalisation(string $localisation): self
+    {
+        $this->localisation = $localisation;
+        return $this;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        if (!in_array($type, ['urbain', 'rural'])) {
+            throw new \InvalidArgumentException("Type invalide");
+        }
+        $this->type = $type;
+        return $this;
+    }
+}
