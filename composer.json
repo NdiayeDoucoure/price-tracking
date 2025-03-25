@@ -65,6 +65,7 @@
     "symfony/polyfill-php81": "*"
   },
   "scripts": {
+    "test": "php vendor/bin/phpunit --stderr",
     "auto-scripts": {
       "cache:clear": "symfony-cmd",
       "assets:install %PUBLIC_DIR%": "symfony-cmd"
