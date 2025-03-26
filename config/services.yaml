@@ -8,11 +8,6 @@ parameters:
   twilio.token: "%env(TWILIO_TOKEN)%"
   twilio.phone: "%env(TWILIO_PHONE)%"
 services:
-  App\Service\NotificationService:
-    arguments:
-      $sid: "%twilio.sid%"
-      $token: "%twilio.token%"
-      $phone: "%twilio.phone%"
   # default configuration for services in *this* file
   _defaults:
     autowire: true # Automatically injects dependencies in your services.
@@ -26,6 +21,10 @@ services:
       - "../src/DependencyInjection/"
       - "../src/Entity/"
       - "../src/Kernel.php"
-
+  App\Service\NotificationService:
+    arguments:
+      $sid: "%twilio.sid%"
+      $token: "%twilio.token%"
+      $phone: "%twilio.phone%"
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones
