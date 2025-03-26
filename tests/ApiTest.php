@@ -24,7 +24,7 @@ class ApiTest extends WebTestCase
 {
     $client = static::createClient();
     
-    $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI4NzEyMTIsImV4cCI6MTc0Mjg3NDgxMiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXNlckB1bml2LnNuIn0.p_YfYkvZs91zNHWYt5RaBTPwKagDsTXNepx_xRWqY-VKUqVg5VA7ex5Vy5z1lqRNz9FCTCtB8q4nSL-Nc0JlBw4vf-xmgtJ6eIk0GlCgzElwEkX-FdRO4eZ8LpzX5mqlQIa2Ns42HOTWNFqnTcyeDLZkUgPmjLxXTHV_-AxC0NCG1enIIXNHu4QUtDSreTdai_5c-ZXz87FJ4sVdxZUFPGn2ix6SCU3Fr66wOah62gJH7MWV8XGzeyD7DaZpc6sh9JXjEmT8aZ7lUj9ufhS4NixBQijearAEBiQ7dmp08ViBoc9pNbZ8L5LIDHxDrGdFXgFpKemqTAi5X30bzVuaxQ'; // Ton token ici
+    $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDI5NzkxMTEsImV4cCI6MTc0Mjk4MjcxMSwicm9sZXMiOlsiUk9MRV9DT01NRVJDQU5UIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY29tbWVyY2FudEB1bml2LnNuIn0.X3CjOoHlzq13qKGvv8r91-MAAd3c2slClKU0CQOn8BSzZv3N3Teisa6h3wcOmjk3esj8mCSu3hyEgrK336M8lw-rrBVlb0xadzZb5dIqARrLKzlFlWMwuGb0NsZ11eAKaKhS-GFZ_wPMgAao-iikZ1l1wXEaEhDaWeyZW6ZzJHv4hb5ZxyDsX2oN67NE1_FLyz8LGhu31m_FA8lyEqKxUCgQg2NzaESSZ2rk4goKkRctm0oB3rViSYoQAgk4ZWzMMYGHphxSplkMiy_a6p2kZhlM22YTj2UHiG1fuCGPka8H1ooPdvHCLnztShSNo8tX88o-7TADUVDK9Xcq99V9sw';
     $client->setServerParameter('HTTP_AUTHORIZATION', 'Bearer ' . $token);
     
     $client->request('GET', '/api/produits');
